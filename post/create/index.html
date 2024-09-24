@@ -10,7 +10,26 @@
     <h1>Create Post</h1>
 
     <form name="createPost">
-      <button>Create Post</button>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" placeholder="Enter title" required />
+      <br />
+
+      <!-- Body input -->
+      <label for="body">Body:</label>
+      <textarea id="body" name="body" placeholder="Enter body content" required></textarea>
+      <br />
+
+      <!-- Tags input -->
+      <label for="tags">Tags:</label>
+      <input type="text" id="tags" name="tags" placeholder="Enter tags" />
+      <br />
+
+      <!-- Media URL input -->
+      <label for="mediaUrl">Media URL:</label>
+      <input type="url" id="mediaUrl" name="mediaUrl" placeholder="Enter media URL" />
+      <br />
+
+      <button type="submit">Create Post</button>
     </form>
   </body>
 </html>
