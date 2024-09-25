@@ -1,3 +1,5 @@
+import { getKey } from "../auth/key";
+
 export async function readPost(id) {}
 
 export async function readPosts(limit = 12, page = 1, tag) {}
