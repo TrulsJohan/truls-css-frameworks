@@ -2,11 +2,10 @@ import { authGuard } from "../../utilities/authGuard";
 import { setLogoutListener } from "../../ui/global/logout";
 import {readPosts} from "../../api/post/read.js";
 
-
 authGuard();
 setLogoutListener();
 
-    const postContainer = document.getElementById("postContainer");
+const postContainer = document.getElementById("postContainer");
 
 async function displayPosts(page = 1) {
     const { ok, data } = await readPosts(12, page);
@@ -40,5 +39,3 @@ async function displayPosts(page = 1) {
 
 // Display posts on page load
 // displayPosts();
-
-
