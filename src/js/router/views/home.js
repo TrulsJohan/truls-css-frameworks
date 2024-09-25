@@ -1,6 +1,6 @@
 import { authGuard } from "../../utilities/authGuard";
 import { setLogoutListener } from "../../ui/global/logout";
-import { readPosts } from "../../api/post/read";
+import {readPosts} from "../../api/post/read.js";
 
 authGuard();
 setLogoutListener();
@@ -39,4 +39,3 @@ async function displayPosts(page = 1) {
 
 // Display posts on page load
 // displayPosts();
-
