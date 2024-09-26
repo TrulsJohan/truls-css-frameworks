@@ -1,5 +1,5 @@
 import { getKey } from "../auth/key.js";
-import { API_SOCIAL_POSTS } from "../constants.js";
+import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from "../constants.js";
 import {API_KEY} from "../constants.js";
 
 // Function to get options
@@ -85,7 +85,7 @@ export async function readPostsByUser(username, limit = 12, page = 1) {
         return;
     }
 
-    const url = new URL(`${API_SOCIAL_POSTS}/${user}`);
+    const url = new URL(`${API_SOCIAL_PROFILES}/${user}/posts`);
     url.searchParams.append("limit", limit);
     url.searchParams.append("page", page);
 
