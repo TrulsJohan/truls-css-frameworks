@@ -9,8 +9,8 @@ const postContainer = document.createElement("div");
 document.body.appendChild(postContainer);
 
 async function displayPost() {
-    const { ok, data } = await readPost()
-    if(!ok) {
+    const data = await readPost()
+    if(!data) {
         alert("Could not fetch data!")
         return;
     }
@@ -30,6 +30,8 @@ async function displayPost() {
             ${tags}
             <p class="body">${post.body}</p>
         </div>`;
+        
+    localStorage.removeItem(`selectedPostId`);
 }
 
 displayPost();

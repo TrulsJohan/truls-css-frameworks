@@ -23,8 +23,14 @@ export async function readPost(id) {
         return;
     }
 
+    const postId = localStorage.getItem(`selectedPostId`);
+    if(!postId) {
+        alert("No postId found")
+        return;
+    }
+
     try {
-        const response = await fetch(`${API_SOCIAL_POSTS}/${id}/?_author=true`, getOptions(accessToken));
+        const response = await fetch(`${API_SOCIAL_POSTS}/${postId}/?_author=true`, getOptions(accessToken));
 
         if (!response.ok) {
             throw new Error(`Failed to fetch post: ${response.statusText}`);
