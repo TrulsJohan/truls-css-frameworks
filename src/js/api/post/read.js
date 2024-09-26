@@ -15,7 +15,7 @@ function getOptions(accessToken) {
 }
 
 
-// Function to read a single post (currently not implemented)
+// Fetches single post by id
 export async function readPost(id) {
     const accessToken = await getKey();
     if (!accessToken) {
@@ -45,7 +45,7 @@ export async function readPost(id) {
     }
 }
 
-// Get 12 posts with pagination
+// Get 12 posts from API
 export async function readPosts(limit = 12, page = 1) {
     const accessToken = await getKey();
     if (!accessToken) {
@@ -71,5 +71,34 @@ export async function readPosts(limit = 12, page = 1) {
     }
 }
 
-// Function to read posts by a specific user (currently not implemented)
-export async function readPostsByUser(username, limit = 12, page = 1, tag) {}
+//fetches 12 posts by username
+export async function readPostsByUser(username, limit = 12, page = 1) {
+    const accessToken = await getKey();
+    if (!accessToken) {
+        console.error("Could not fetch posts. No access token found.");
+        return;
+    }
+
+    const user = localStorage.getItem(`user`);
+    if(!user) {
+        alert("User not found")
+        return;
+    }
+
+    const url = new URL(`${API_SOCIAL_POSTS}/${user}`);
+    url.searchParams.append("limit", limit);
+    url.searchParams.append("page", page);
+
+
+    try {
+        const response = await fetch(url.toString(), getOptions(accessToken));
+        if (!response.ok) {
+            throw new Error(`Error getting user data: ${response.statusText}`);
+        }
+        const userPosts = await response.json();
+        console.log(userPosts);
+        return userPosts;
+    } catch (error) {
+        console.error("Error:", error.message);
+    }
+}
