@@ -14,8 +14,30 @@ function getOptions(accessToken) {
     };
 }
 
+
 // Function to read a single post (currently not implemented)
-export async function readPost(id) {}
+export async function readPost(id) {
+    const accessToken = await getKey();
+    if (!accessToken) {
+        console.error("Could not fetch post. No access token found.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`${API_SOCIAL_POSTS}/${id}/?_author=true`, getOptions(accessToken));
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch post: ${response.statusText}`);
+        }
+
+        const post = await response.json();
+        console.log(post);
+        return post;
+
+    } catch (error) {
+        console.error("Error fetching post:", error.message);
+    }
+}
 
 // Get 12 posts with pagination
 export async function readPosts(limit = 12, page = 1) {
