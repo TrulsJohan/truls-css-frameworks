@@ -5,21 +5,22 @@ import {readPosts} from "../../api/post/read.js";
 authGuard();
 setLogoutListener();
 
-const postContainer = document.getElementById("postContainer");
+const postsContainer = document.getElementById("postsContainer");
 
 async function displayPosts(page = 1) {
-    const { ok, data } = await readPosts(12, page);
-    if (!ok) {
-        return alert("Failed to load posts");
+    const data = await readPosts(12, page);
+    if (!data) {
+        alert("Failed to load posts");
+        return;
     }
 
-    postContainer.innerHTML = data.data.map((post) => {
+    postsContainer.innerHTML = data.data.map((post) => {
         const mediaUrl = post.media?.url || "https://upload.wikimedia.org/wikipedia/commons/f/f9/No-image-available.jpg";
         const mediaAlt = post.media?.alt || "Post Image";
         const tags = post.tags?.length ? `<p class="tags">${post.tags.join(", ")}</p>` : "";
 
         return `
-            <div class="post-card" post-id="${post.id}">
+            <div class="post-card" data-id="${post.id}">
                 <div class="media">
                     <img src="${mediaUrl}" alt="${mediaAlt}"/>
                 </div>
@@ -29,13 +30,13 @@ async function displayPosts(page = 1) {
             </div>`;
     }).join("");
 
-    postContainer.querySelectorAll(".post-card").forEach((card) => {
+    postsContainer.querySelectorAll(".post-card").forEach((card) => {
         card.addEventListener("click", () => {
-            localStorage.setItem("selectedPostId", card.dataset.postId);
+            const postId = card.getAttribute("data-id");
+            localStorage.setItem("selectedPostId", postId);
             window.location.href = "/post/";
         });
     });
 }
 
-// Display posts on page load
-// displayPosts();
+displayPosts();
