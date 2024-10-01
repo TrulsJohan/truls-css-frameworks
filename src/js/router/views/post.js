@@ -5,6 +5,8 @@ backButton.textContent = "Go Back";
 backButton.addEventListener("click", ()=> window.history.back());
 document.body.appendChild(backButton);
 
+
+
 const postContainer = document.createElement("div");
 document.body.appendChild(postContainer);
 
@@ -20,6 +22,19 @@ async function displayPost() {
     const mediaUrl = post.media?.url || "https://upload.wikimedia.org/wikipedia/commons/f/f9/No-image-available.jpg";
     const mediaAlt = post.media?.alt || "Post Image";
     const tags = post.tags?.length ? `<p class="tags">${post.tags.join(", ")}</p>` : "";
+
+    if (localStorage.getItem('user') === post.author.name){
+        const editPostButton = document.createElement("button");
+        editPostButton.textContent = "Edit post";
+
+        editPostButton.addEventListener("click", ()=> {
+            const updateId = post.id;
+            localStorage.setItem("selectedPostId", updateId)
+            window.location.href = '../../post/edit/'
+        })
+
+        document.body.appendChild(editPostButton)
+    }
 
     postContainer.innerHTML = `
         <div class="post-card" data-id="${post.id}">
