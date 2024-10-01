@@ -1,7 +1,25 @@
 import { authGuard } from "../../utilities/authGuard";
 import { readPostsByUser } from "../../api/post/read";
+import { readProfile } from "../../api/profile/read";
+import { onUpdateProfile } from "../../ui/profile/update";
 
 const userPostsContainer = document.getElementById("userPostsContainer");
+const form = document.forms.updateProfile;
+
+form.addEventListener("submit", onUpdateProfile);
+
+async function displayUserProfile (){
+    const user = localStorage.getItem(`user`);
+    const data = await readProfile(user);
+    if(!data) {
+        alert("Could not fetch user data")
+        return;
+    } else {
+        document.getElementById("profileBanner").value = data.data.banner.url;
+        document.getElementById("profileImage").value = data.data.avatar.url;
+        document.getElementById("profileBio").value = data.data.bio;
+    }
+}
 
 async function displayUserPosts() {
     const data = await readPostsByUser();
@@ -36,5 +54,6 @@ async function displayUserPosts() {
 }
 
 authGuard();
+displayUserProfile();
 displayUserPosts();
 
