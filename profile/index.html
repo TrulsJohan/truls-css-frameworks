@@ -11,8 +11,20 @@
     <h1>Profile</h1>
 
     <form name="updateProfile">
-      <button>Update Profile</button>
-      <div id="userPostsContainer"></div>
+      <label for="profileBanner">Profile Banner URL:</label>
+      <input type="url" id="profileBanner" name="profileBanner" placeholder="Enter profile banner URL" required />
+      <br />
+
+      <label for="profileImage">Profile Image URL:</label>
+      <input type="url" id="profileImage" name="profileImage" placeholder="Enter profile image URL" required />
+      <br />
+
+      <label for="profileBio">Bio:</label>
+      <textarea id="profileBio" name="profileBio" placeholder="Enter your bio" required></textarea>
+      <br />
+
+      <button type="submit">Update Profile</button>
     </form>
+    <div id="userPostsContainer"></div>
   </body>
 </html>
