@@ -1,4 +1,5 @@
 import { readPost } from "../../api/post/read";
+import { onDeletePost } from "../../ui/post/delete.js";
 
 const backButton = document.createElement("button");
 backButton.textContent = "Go Back";
@@ -26,6 +27,8 @@ async function displayPost() {
     if (localStorage.getItem('user') === post.author.name){
         const editPostButton = document.createElement("button");
         editPostButton.textContent = "Edit post";
+        const deletePostButton = document.createElement("button");
+        deletePostButton.textContent = "Delete post";
 
         editPostButton.addEventListener("click", ()=> {
             const updateId = post.id;
@@ -33,7 +36,14 @@ async function displayPost() {
             window.location.href = '../../post/edit/'
         })
 
+        deletePostButton.addEventListener("click", ()=> {
+            const updateId = post.id;
+            localStorage.setItem("selectedPostId", updateId)
+            onDeletePost()
+        })
+
         document.body.appendChild(editPostButton)
+        document.body.appendChild(deletePostButton)
     }
 
     postContainer.innerHTML = `

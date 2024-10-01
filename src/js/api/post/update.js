@@ -1,8 +1,8 @@
 import { API_KEY, API_SOCIAL_POSTS } from "../constants.js";
 
 export async function updatePost(updateData) {
-
     const postId = localStorage.getItem(`selectedPostId`);
+
     if(!postId) {
         alert("No postId found")
         return;
