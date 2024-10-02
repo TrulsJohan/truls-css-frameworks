@@ -54,7 +54,7 @@ export async function onUpdatePost(event) {
 
         if (response) {
             console.log("post updated successfully");
-            window.location.href = "/";
+            window.location.href = "/profile/";
         }
     }catch (error){
         alert(`There was an error updating the post: ${error.message}`);

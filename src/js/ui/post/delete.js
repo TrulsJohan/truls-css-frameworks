@@ -6,7 +6,7 @@ export async function onDeletePost(event) {
 
         const deletion = await deletePost(event);
         if (deletion) {
-            window.location.href = "/";
+            window.location.href = "/profile/";
             alert("Deleted post")
         } else {
             alert("Failed to delete post.");
