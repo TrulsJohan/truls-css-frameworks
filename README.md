@@ -55,11 +55,12 @@ Start developer server
 npm run dev
 ```
 
-## License
-
 ## Contact
+[TrulsJohan](https://github.com/frills-social)
+[Fillschjbo](https://github.com/TrulsJohan)
 
 ## Aknowledgements
+[Noroff](https://github.com/NoroffFEU)
 
   
   
