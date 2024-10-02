@@ -8,5 +8,5 @@ export async function onUpdateProfile(event) {
         alert("Could not fetch user data")
         return;
     }
-    console.log(data);
 }
+

@@ -25,3 +25,4 @@ export async function updatePost(updateData) {
         console.error(`error updating post: `, error)
     }
 }
+

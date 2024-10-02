@@ -2,7 +2,6 @@ import { getKey } from "../auth/key.js";
 import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from "../constants.js";
 import {API_KEY} from "../constants.js";
 
-// Function to get options
 function getOptions(accessToken) {
     return {
         method: "GET",
@@ -14,8 +13,6 @@ function getOptions(accessToken) {
     };
 }
 
-
-// Fetches single post by id
 export async function readPost(id) {
     const accessToken = await getKey();
     if (!accessToken) {
@@ -37,7 +34,6 @@ export async function readPost(id) {
         }
 
         const post = await response.json();
-        console.log(post);
         return post;
 
     } catch (error) {
@@ -45,7 +41,6 @@ export async function readPost(id) {
     }
 }
 
-// Get 12 posts from API
 export async function readPosts(limit = 12, page = 1) {
     const accessToken = await getKey();
     if (!accessToken) {
@@ -64,14 +59,12 @@ export async function readPosts(limit = 12, page = 1) {
             throw new Error(`Error fetching posts: ${response.statusText}`);
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error("Error:", error.message);
     }
 }
 
-//fetches 12 posts by username
 export async function readPostsByUser(username, limit = 12, page = 1) {
     const accessToken = await getKey();
     if (!accessToken) {
@@ -96,9 +89,9 @@ export async function readPostsByUser(username, limit = 12, page = 1) {
             throw new Error(`Error getting user data: ${response.statusText}`);
         }
         const userPosts = await response.json();
-        console.log(userPosts);
         return userPosts;
     } catch (error) {
         console.error("Error:", error.message);
     }
 }
+

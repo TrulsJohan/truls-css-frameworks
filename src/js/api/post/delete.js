@@ -24,3 +24,4 @@ export async function deletePost(id) {
         console.error(`error updating post: `, error)
     }
 }
+

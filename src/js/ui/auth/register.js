@@ -14,3 +14,4 @@ export async function onRegister(event) {
         console.error('Registration failed', error);
     }
 }
+

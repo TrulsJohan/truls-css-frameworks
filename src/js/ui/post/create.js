@@ -25,7 +25,6 @@ export async function onCreatePost(event) {
         const response = await createPost(postData);
 
         if (response) {
-            console.log("Post created successfully:", response);
             window.location.href = "/"
         } else {
             console.error("Failed to create post");
