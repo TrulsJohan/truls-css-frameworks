@@ -1,7 +1,7 @@
-Project title
+#Frills
 <!-- Optional: Add a project logo if available -->
 
-Table of Contents:
+##Table of contents:
 
 About the Project
 Built With
@@ -29,14 +29,21 @@ Getting started
   You can run this on any platform
 
 - Installation
-  <!--clone the repo-->
-  git clone <http or ssh link>
 
-  <!--install dev dependecies-->
-  npm install
+Clone repo
+```bash
+ git clone <repo link>
+```
 
-  <!--Start the developer server to view project-->
-  npm run dev
+Install developer dependencies
+```bash
+npm install
+```
+
+Start developer server
+```bash
+npm run dev
+```
 
   Features
   1.
