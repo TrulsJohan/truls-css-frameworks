@@ -6,3 +6,8 @@ authGuard();
 const form = document.forms.createPost;
 
 form.addEventListener("submit", onCreatePost);
+
+const backButton = document.createElement("button");
+backButton.textContent = "Go Back";
+backButton.addEventListener("click", ()=> window.history.back());
+document.body.appendChild(backButton);

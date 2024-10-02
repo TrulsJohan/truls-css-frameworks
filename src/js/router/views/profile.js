@@ -4,9 +4,12 @@ import { readProfile } from "../../api/profile/read";
 import { onUpdateProfile } from "../../ui/profile/update";
 
 const userPostsContainer = document.getElementById("userPostsContainer");
+const backButton = document.getElementById("backButton");
 const form = document.forms.updateProfile;
 
 form.addEventListener("submit", onUpdateProfile);
+backButton.addEventListener("click", ()=> window.history.back());
+
 
 async function displayUserProfile (){
     const user = localStorage.getItem(`user`);
