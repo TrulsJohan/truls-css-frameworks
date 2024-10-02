@@ -6,8 +6,6 @@ backButton.textContent = "Go Back";
 backButton.addEventListener("click", ()=> window.history.back());
 document.body.appendChild(backButton);
 
-
-
 const postContainer = document.createElement("div");
 document.body.appendChild(postContainer);
 
