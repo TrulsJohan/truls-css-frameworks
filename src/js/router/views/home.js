@@ -3,7 +3,6 @@ import { setLogoutListener } from "../../ui/global/logout";
 import {readPosts} from "../../api/post/read.js";
 
 authGuard();
-setLogoutListener();
 
 const postsContainer = document.getElementById("postsContainer");
 
@@ -39,4 +38,5 @@ async function displayPosts(page = 1) {
     });
 }
 
+setLogoutListener();
 displayPosts();
