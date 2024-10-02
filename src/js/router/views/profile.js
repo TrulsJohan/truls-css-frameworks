@@ -10,7 +10,14 @@ const form = document.forms.updateProfile;
 form.addEventListener("submit", onUpdateProfile);
 backButton.addEventListener("click", ()=> window.location.href = "/");
 
-
+/**
+ * Displays the user's profile information on the page by fetching it from the API.
+ *
+ * @async
+ * @function displayUserProfile
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the user data cannot be fetched or rendered.
+ */
 async function displayUserProfile (){
     const user = localStorage.getItem(`user`);
     const data = await readProfile(user);
@@ -24,6 +31,14 @@ async function displayUserProfile (){
     }
 }
 
+/**
+ * Displays a list of posts created by the user on the page by fetching them from the API.
+ *
+ * @async
+ * @function displayUserPosts
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the user posts cannot be fetched or rendered.
+ */
 async function displayUserPosts() {
     const data = await readPostsByUser();
     if(!data) {

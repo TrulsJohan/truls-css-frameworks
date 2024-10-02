@@ -1,5 +1,17 @@
 import { createPost } from "../../api/post/create";
 
+/**
+ * Handles the post creation process by capturing user input from the form,
+ * validating the data, and calling the createPost function to submit the data to the API.
+ * Redirects to the homepage upon successful post creation.
+ *
+ * @async
+ * @function onCreatePost
+ * @param {Event} event - The event object associated with the form submission.
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the post creation process fails.
+ */
+
 export async function onCreatePost(event) {
     event.preventDefault();
     const form = event.target;

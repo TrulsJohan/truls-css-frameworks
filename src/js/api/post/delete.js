@@ -1,5 +1,14 @@
 import {API_KEY, API_SOCIAL_POSTS} from "../constants.js";
 
+/**
+ * Deletes a social post by ID from the API.
+ *
+ * @async
+ * @function deletePost
+ * @param {string} id - The ID of the post to delete.
+ * @returns {Promise<Response|undefined>} Returns the API response if the deletion is successful, otherwise logs an error.
+ * @throws {Error} Throws an error if the request to delete the post fails.
+ */
 export async function deletePost(id) {
     const postId = localStorage.getItem(`selectedPostId`);
 

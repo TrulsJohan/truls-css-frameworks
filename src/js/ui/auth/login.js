@@ -1,5 +1,15 @@
 import { login } from "../../api/auth/login.js";
 
+/**
+ * Handles the login process by capturing user input, calling the login function,
+ * and redirecting the user upon successful login.
+ *
+ * @async
+ * @function onLogin
+ * @param {Event} event - The event object associated with the form submission.
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the login process fails.
+ */
 export async function onLogin(event) {
     event.preventDefault();
 
