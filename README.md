@@ -56,8 +56,8 @@ npm run dev
 ```
 
 ## Contact
-[TrulsJohan](https://github.com/frills-social)
-[Fillschjbo](https://github.com/TrulsJohan)
+[Fillschjbo](https://github.com/frills-social)
+[TrulsJohan](https://github.com/TrulsJohan)
 
 ## Aknowledgements
 [Noroff](https://github.com/NoroffFEU)
