@@ -17,11 +17,10 @@ export async function login({ email, password }) {
         localStorage.setItem("token", token);
         localStorage.setItem("user", user);
 
-        // Check for an error in the response
         if (!response.ok) {
             throw new Error(`Error: ${response.status}`);
         }
-        return data; // Return the data if successful
+        return data;
         
     } catch (error) {
         console.error(error);

@@ -40,3 +40,4 @@ async function displayPosts(page = 1) {
 
 setLogoutListener();
 displayPosts();
+

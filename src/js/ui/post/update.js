@@ -2,12 +2,10 @@ import { readPost } from "../../api/post/read.js";
 import { updatePost } from "../../api/post/update.js";
 
 export async function getDataFromPost() {
-    console.log("Fetching data from post...");
     const data = await readPost();
 
     if (!data || !data.data) {
         alert("Could not fetch data!");
-        console.log("Data fetch failed or data is undefined.");
         return;
     }
 
