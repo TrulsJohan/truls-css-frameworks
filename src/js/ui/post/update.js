@@ -1,6 +1,15 @@
 import { readPost } from "../../api/post/read.js";
 import { updatePost } from "../../api/post/update.js";
 
+/**
+ * Fetches data for a specific post and populates the form fields with the retrieved information.
+ * Displays an alert if the data cannot be fetched.
+ *
+ * @async
+ * @function getDataFromPost
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the post data cannot be fetched or populated.
+ */
 export async function getDataFromPost() {
     const data = await readPost();
 
@@ -25,7 +34,17 @@ export async function getDataFromPost() {
     console.log("Data successfully fetched and form populated.");
 }
 
-
+/**
+ * Handles the post update process by capturing user input from the form,
+ * validating the data, and calling the updatePost function to submit the updated data to the API.
+ * Redirects to the profile page upon successful post update.
+ *
+ * @async
+ * @function onUpdatePost
+ * @param {Event} event - The event object associated with the form submission.
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the post update process fails.
+ */
 export async function onUpdatePost(event) {
     event.preventDefault();
     const form = event.target;

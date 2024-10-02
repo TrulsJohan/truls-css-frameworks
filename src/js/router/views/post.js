@@ -9,6 +9,15 @@ document.body.appendChild(backButton);
 const postContainer = document.createElement("div");
 document.body.appendChild(postContainer);
 
+/**
+ * Displays a specific social post on the page by fetching it from the API and rendering its content.
+ * Provides options to edit or delete the post if the logged-in user is the author.
+ *
+ * @async
+ * @function displayPost
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the post data cannot be fetched or rendered.
+ */
 async function displayPost() {
     const data = await readPost()
     if(!data) {

@@ -6,6 +6,15 @@ authGuard();
 
 const postsContainer = document.getElementById("postsContainer");
 
+/**
+ * Displays a list of social posts on the page by fetching them from the API and rendering them in the posts container.
+ *
+ * @async
+ * @function displayPosts
+ * @param {number} [page=1] - The page number for pagination (default is 1).
+ * @returns {Promise<void>} Returns nothing.
+ * @throws {Error} Throws an error if the posts cannot be loaded.
+ */
 async function displayPosts(page = 1) {
     const data = await readPosts(12, page);
     if (!data) {
