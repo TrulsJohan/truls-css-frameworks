@@ -3,32 +3,34 @@
 
 ##Table of contents:
 
-About the Project
-Built With
-Getting Started
-- Prerequisites
-- Installation
-Features
-License
-Contact
-Acknowledgments
+- About the Project
+- Built With
+- Getting Started
+  - Prerequisites
+  - Installation
+- Features
+- License
+- Contact
+- Acknowledgments
 
-About the project
+##About the project
+text here
 
-Key features
-1.
-2.
-3.
+##Key features
+- 1
+- 2
+- 3
 
-Built with
+##Built with
 - Vite
 - Node.js
 
-Getting started
-- Prerequisites:
+##Getting started
+
+###Prerequisites:
   You can run this on any platform
 
-- Installation
+###Installation
 
 Clone repo
 ```bash
@@ -45,16 +47,16 @@ Start developer server
 npm run dev
 ```
 
-  Features
-  1.
-  2.
-  3.
+##Features
+- 1
+- 2
+- 3
 
-  License
+##License
 
-  Contact
+##Contact
 
-  Aknowledgements
+##Aknowledgements
 
   
   
