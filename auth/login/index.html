@@ -8,20 +8,44 @@
   </head>
 
   <body>
-    <h1>Login</h1>
+    <div class="flex flex-col">
+      <h1 class="h-8 font-semibold">Login to Your Account</h1>
+      <p>Login with social networks</p>
+      <div>
+        <img src="../../public/images/google.svg" alt="google"/>
+        <img src="../../public/images/linkedIn.svg" alt="linkedIn"/>
+        <img src="../../public/images/reddit.svg" alt="reddit"/>
+      </div>
+      <div class="flex flex-row">
+        <div class="bg-black w-5 h-1"></div>
+        <p>Or</p>
+        <div class="bg-black w-5 h-1"></div>
+      </div>
+    </div>
+    
+
     <form name="login">
       <div>
         <label for="email">Email</label>
-        <input id="email" type="email" name="email" required/>
+        <input id="email" type="email" name="email" required placeholder="Email"/>
       </div>
 
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" required/>
+        <input type="password" name="password" id="password" required placeholder="Password"/>
       </div>
-
-      <a href="/auth/register/">Register</a>
       <button>Login</button>
     </form>
+
+    <div class="bg-slate-400">
+      <h1>New Here?</h1>
+      <p>
+        Sign up and discover a great<br/>
+        amount of new opportunities!
+      </p>
+    </div>
+    <a href="/auth/register/">
+      <button>Sign Up</button>
+    </a>
   </body>
 </html>
