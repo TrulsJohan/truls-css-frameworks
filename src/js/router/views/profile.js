@@ -2,6 +2,7 @@ import { authGuard } from "../../utilities/authGuard";
 import { readPostsByUser } from "../../api/post/read";
 import { readProfile } from "../../api/profile/read";
 import { onUpdateProfile } from "../../ui/profile/update";
+import { setLogoutListener } from "../../ui/global/logout";
 
 const userPostsContainer = document.getElementById("userPostsContainer");
 const backButton = document.getElementById("backButton");
@@ -74,4 +75,5 @@ async function displayUserPosts() {
 authGuard();
 displayUserProfile();
 displayUserPosts();
+setLogoutListener();
 

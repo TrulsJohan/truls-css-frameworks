@@ -1,5 +1,4 @@
 import { authGuard } from "../../utilities/authGuard";
-import { setLogoutListener } from "../../ui/global/logout";
 import {readPosts} from "../../api/post/read.js";
 
 authGuard();
@@ -25,16 +24,26 @@ async function displayPosts(page = 1) {
     postsContainer.innerHTML = data.data.map((post) => {
         const mediaUrl = post.media?.url || "https://upload.wikimedia.org/wikipedia/commons/f/f9/No-image-available.jpg";
         const mediaAlt = post.media?.alt || "Post Image";
-        const tags = post.tags?.length ? `<p class="tags">${post.tags.join(", ")}</p>` : "";
-
+        const tags = post.tags?.length ? `<p class="text-xs text-gray-500 mt-1">${post.tags.join(", ")}</p>` : "";
+    
         return `
-            <div class="post-card" data-id="${post.id}">
+            <div class="post-card bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105" data-id="${post.id}">
+                <!-- Media Section -->
                 <div class="media">
-                    <img src="${mediaUrl}" alt="${mediaAlt}"/>
+                    <img src="${mediaUrl}" alt="${mediaAlt}" class="w-full h-48 object-cover"/>
                 </div>
-                <h2 class="title">${post.title}</h2>
-                ${tags}
-                <p class="body">${post.body}</p>
+    
+                <!-- Content Section -->
+                <div class="p-4">
+                    <!-- Title -->
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">${post.title}</h2>
+                    
+                    <!-- Tags -->
+                    ${tags}
+    
+                    <!-- Body -->
+                    <p class="text-sm text-gray-600 mt-2">${post.body}</p>
+                </div>
             </div>`;
     }).join("");
 
@@ -47,6 +56,5 @@ async function displayPosts(page = 1) {
     });
 }
 
-setLogoutListener();
 displayPosts();
 
