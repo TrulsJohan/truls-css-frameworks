@@ -1,8 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  darkMode: "class",
+  content: ["./**/*.{html,js,ts}","!./node_modules/**/*"],
   theme: {
-    extend: {},
+    extend: { //changes utility classes, custome changes
+
+      height: {
+        "7": "30px"
+      },
+
+      colors: {
+        brand: {
+
+        }
+      }
+
+    },
   },
   plugins: [],
 }
