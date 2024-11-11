@@ -1,33 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Post</title>
+  <script type="module" src="/src/app.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-  <body>
-    <h1>Create Post</h1>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <form name="createPost">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" placeholder="Enter title" required/>
-      <br/>
+  <div class="max-w-md w-full bg-white shadow-lg rounded-lg p-6 space-y-6">
+    <h1 class="text-2xl font-semibold text-gray-800 text-center">Create a New Post</h1>
 
-      <label for="body">Body:</label>
-      <textarea id="body" name="body" placeholder="Enter body content" required></textarea>
-      <br/>
+    <!-- Form Container -->
+    <form name="createPost" class="space-y-4">
+      
+      <!-- Title Field -->
+      <div>
+        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter title" required
+               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent"/>
+      </div>
 
-      <label for="tags">Tags:</label>
-      <input type="text" id="tags" name="tags" placeholder="Enter tags" />
-      <br/>
+      <!-- Body Field -->
+      <div>
+        <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
+        <textarea id="body" name="body" placeholder="Enter body content" required
+                  class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent h-32"></textarea>
+      </div>
 
-      <label for="mediaUrl">Media URL:</label>
-      <input type="url" id="mediaUrl" name="mediaUrl" placeholder="Enter media URL"/>
-      <br/>
+      <!-- Tags Field -->
+      <div>
+        <label for="tags" class="block text-sm font-medium text-gray-700">Tags</label>
+        <input type="text" id="tags" name="tags" placeholder="Enter tags (comma separated)"
+               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent"/>
+      </div>
 
-      <button type="submit">Create Post</button>
+      <!-- Media URL Field -->
+      <div>
+        <label for="mediaUrl" class="block text-sm font-medium text-gray-700">Media URL</label>
+        <input type="url" id="mediaUrl" name="mediaUrl" placeholder="Enter media URL"
+               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent"/>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="w-full py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        Create Post
+      </button>
     </form>
-  </body>
+  </div>
+</body>
 </html>
