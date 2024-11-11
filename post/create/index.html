@@ -8,10 +8,17 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-b from-pink-100 via-purple-100 to-yellow-100 flex items-center justify-center min-h-screen">
+<body class="bg-gradient-to-b from-pink-50 via-purple-50 to-yellow-50 flex items-center justify-center min-h-screen">
 
   <div class="max-w-md w-full bg-white shadow-lg rounded-lg p-6 space-y-6 border-t-4">
-    <h1 class="text-2xl font-semibold text-gray-800 text-center">Create a New Post</h1>
+    <div class="flex items-center space-x-1 w-full">
+      <a href="/">
+        <img src="../../public/images/backArrow.svg" alt="backArrow" class="w-6 h-6 text-gray-600 cursor-pointer hover:text-purple-500 transition duration-200"/>
+      </a>
+      <h1 class="text-2xl font-semibold text-gray-800 flex-1 text-center">Create a New Post</h1>
+    </div>
+    
+    
 
     <!-- Form Container -->
     <form name="createPost" class="space-y-4">
@@ -20,35 +27,36 @@
       <div>
         <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
         <input type="text" id="title" name="title" placeholder="Enter title" required
-               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-400 focus:border-transparent"/>
+               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"/>
       </div>
 
       <!-- Body Field -->
       <div>
         <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
         <textarea id="body" name="body" placeholder="Enter body content" required
-                  class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-400 focus:border-transparent h-32"></textarea>
+                  class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent h-32"></textarea>
       </div>
 
       <!-- Tags Field -->
       <div>
         <label for="tags" class="block text-sm font-medium text-gray-700">Tags</label>
         <input type="text" id="tags" name="tags" placeholder="Enter tags (comma separated)"
-               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-400 focus:border-transparent"/>
+               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"/>
       </div>
 
       <!-- Media URL Field -->
       <div>
         <label for="mediaUrl" class="block text-sm font-medium text-gray-700">Media URL</label>
         <input type="url" id="mediaUrl" name="mediaUrl" placeholder="Enter media URL"
-               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-400 focus:border-transparent"/>
+               class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"/>
       </div>
 
       <!-- Submit Button -->
-      <button type="submit" class="w-full py-2 bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold rounded-md hover:from-orange-400 hover:to-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      <button type="submit" class="w-full py-2 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-semibold rounded-md hover:from-pink-400 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500">
         Create Post
       </button>
     </form>
   </div>
 </body>
+
 </html>
