@@ -29,24 +29,26 @@ async function displayUserProfile (){
         return;
     } else {
         profileContainer.innerHTML = `
-            <div id="profileContainer" class="max-w-3xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
-            <!-- Avatar Section -->
-            <div class="flex justify-center mb-6">
-                <img src="${data.data.avatar.url}" alt="avatar" class="w-32 h-32 rounded-full object-cover border-4 border-indigo-600">
-            </div>
+            <div id="profileContainer" class="max-w-3xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg border-t-4">
+                <!-- Avatar Section -->
+                <div class="flex justify-center mb-6">
+                <img src="${data.data.avatar.url}" alt="avatar" 
+                    class="w-32 h-32 rounded-full object-cover border-4 border-pink-500 shadow-lg">
+                </div>
 
-            <!-- Name -->
-            <h1 class="text-3xl font-semibold text-gray-800 text-center mb-2">${data.data.name}</h1>
+                <!-- Name -->
+                <h1 class="text-3xl font-semibold text-gray-800 text-center mb-2">${data.data.name}</h1>
 
-            <!-- Bio -->
-            <p class="text-lg text-gray-600 text-center mb-6">${data.data.bio}</p>
+                <!-- Bio -->
+                <p class="text-lg text-gray-600 text-center mb-6">${data.data.bio}</p>
 
-            <!-- Update Profile Button -->
-            <div class="flex justify-center">
-                <button class="py-2 px-6 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
-                67 Followers
+                <!-- Followers Button -->
+                <div class="flex justify-center">
+                <button class="py-2 px-6 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-md 
+                        hover:from-orange-500 hover:to-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 transition">
+                    67 Followers
                 </button>
-            </div>
+                </div>
             </div>
         `
 
