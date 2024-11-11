@@ -17,46 +17,37 @@
       </a>
       <h1 class="text-2xl font-semibold text-gray-800 flex-1 text-center">Create a New Post</h1>
     </div>
-    
-    
 
-    <!-- Form Container -->
     <form name="createPost" class="space-y-4">
-      
-      <!-- Title Field -->
+
       <div>
         <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
         <input type="text" id="title" name="title" placeholder="Enter title" required
                class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"/>
       </div>
 
-      <!-- Body Field -->
       <div>
         <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
         <textarea id="body" name="body" placeholder="Enter body content" required
                   class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent h-32"></textarea>
       </div>
 
-      <!-- Tags Field -->
       <div>
         <label for="tags" class="block text-sm font-medium text-gray-700">Tags</label>
         <input type="text" id="tags" name="tags" placeholder="Enter tags (comma separated)"
                class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"/>
       </div>
 
-      <!-- Media URL Field -->
       <div>
         <label for="mediaUrl" class="block text-sm font-medium text-gray-700">Media URL</label>
         <input type="url" id="mediaUrl" name="mediaUrl" placeholder="Enter media URL"
                class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"/>
       </div>
 
-      <!-- Submit Button -->
       <button type="submit" class="w-full py-2 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-semibold rounded-md hover:from-pink-400 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500">
         Create Post
       </button>
     </form>
   </div>
 </body>
-
 </html>
