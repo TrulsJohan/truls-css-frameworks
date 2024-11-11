@@ -10,50 +10,42 @@
 
   <body class="flex justify-center items-start min-h-screen bg-gradient-to-b from-pink-50 via-purple-50 to-indigo-50 md:items-center">
     <div class="max-w-md w-full p-6 bg-white shadow-md rounded-lg">
-  
-      <!-- Title and Social Login Text -->
+
       <div class="text-center mb-6">
         <h1 class="text-2xl font-semibold text-gray-800 mb-2">Login to Your Account</h1>
         <p class="text-gray-500">Login with social networks</p>
       </div>
-  
-      <!-- Social Icons Section -->
+
       <div class="flex justify-center gap-4 mb-6">
         <img src="../../public/images/google.svg" alt="google" class="w-8 h-8 cursor-pointer"/>
         <img src="../../public/images/linkedIn.svg" alt="linkedIn" class="w-8 h-8 cursor-pointer"/>
         <img src="../../public/images/reddit.svg" alt="reddit" class="w-8 h-8 cursor-pointer"/>
       </div>
-  
-      <!-- Divider -->
+
       <div class="flex items-center justify-center gap-2 text-gray-500 mb-6">
         <div class="flex-grow h-px bg-gray-300"></div>
         <p class="text-sm">Or</p>
         <div class="flex-grow h-px bg-gray-300"></div>
       </div>
-  
-      <!-- Form Section -->
+
       <form name="login" class="space-y-4">
-        <!-- Email Field -->
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
           <input id="email" type="email" name="email" required placeholder="Email"
                  class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent"/>
         </div>
-  
-        <!-- Password Field -->
+
         <div>
           <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
           <input id="password" type="password" name="password" required placeholder="Password"
                  class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent"/>
         </div>
-  
-        <!-- Login Button -->
+
         <button class="w-full py-2 mt-4 text-white bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 rounded-md hover:bg-gradient-to-l focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2">
           Login
         </button>
       </form>
-  
-      <!-- Sign Up Section -->
+
       <div class="mt-8 p-4 text-center bg-purple-50 rounded-lg">
         <h2 class="text-lg font-medium text-gray-800">New Here?</h2>
         <p class="text-sm text-gray-600 mt-1">
@@ -61,15 +53,12 @@
           amount of new opportunities!
         </p>
       </div>
-  
-      <!-- Sign Up Button -->
+
       <a href="/auth/register/">
         <button class="w-full mt-4 py-2 text-pink-500 border border-pink-500 rounded-md hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2">
           Sign Up
         </button>
       </a>
-  
     </div>
   </body>  
 </html>
-
