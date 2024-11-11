@@ -1,13 +1,12 @@
 import { readPost } from "../../api/post/read";
 import { onDeletePost } from "../../ui/post/delete.js";
 
+const postContainer = document.getElementById("postContainer");
+
 const backButton = document.createElement("button");
 backButton.textContent = "Go Back";
 backButton.addEventListener("click", ()=> window.history.back());
 document.body.appendChild(backButton);
-
-const postContainer = document.createElement("div");
-document.body.appendChild(postContainer);
 
 /**
  * Displays a specific social post on the page by fetching it from the API and rendering its content.
@@ -54,14 +53,23 @@ async function displayPost() {
     }
 
     postContainer.innerHTML = `
-        <div class="post-card" data-id="${post.id}">
-            <div class="media">
-                <img src="${mediaUrl}" alt="${mediaAlt}" />
+        <div class="post-card bg-white shadow-lg rounded-lg p-6 mb-6 space-y-4" data-id="${post.id}">
+            <!-- Media Section -->
+            <div class="media mb-4">
+                <img src="${mediaUrl}" alt="${mediaAlt}" class="w-full h-auto rounded-lg shadow-md object-cover" />
             </div>
-            <h2 class="title">${post.title}</h2>
-            ${tags}
-            <p class="body">${post.body}</p>
-        </div>`;
+
+            <!-- Title Section -->
+            <h2 class="title text-3xl font-semibold text-gray-800 leading-tight">${post.title}</h2>
+
+            <!-- Tags Section (only if tags exist) -->
+            ${tags ? `<p class="tags text-sm text-gray-500 mt-2">Tags: ${tags}</p>` : ''}
+
+            <!-- Body Section -->
+            <p class="body text-lg text-gray-700 mt-4">${post.body}</p>
+        </div>
+    `;
+
         
     localStorage.removeItem(`selectedPostId`);
 }
