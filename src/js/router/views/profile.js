@@ -44,7 +44,7 @@ async function displayUserProfile (){
             <!-- Update Profile Button -->
             <div class="flex justify-center">
                 <button class="py-2 px-6 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
-                Update Profile
+                67 Followers
                 </button>
             </div>
             </div>
