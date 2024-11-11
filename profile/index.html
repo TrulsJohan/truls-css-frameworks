@@ -7,26 +7,47 @@
     <script type="module" src="/src/app.js"></script>
   </head>
 
-  <body>
-    <h1>Profile</h1>
+  <body class="bg-gradient-to-b from-pink-50 via-purple-50 to-orange-50 min-h-screen">
 
-    <button id="backButton">Go back</button>
+    <div class="flex items-center justify-between p-4 bg-gradient-to-r from-pink-500 to-purple-600 shadow-md text-white">
+      <img id="backButton" src="../public/images/arrow.svg" alt="backButton" class="w-8 h-8 cursor-pointer"/>
+      <h1 class="text-2xl font-semibold">Profile</h1>
+      <img id="logout-btn" src="../public/images/login.svg" alt="logout-btn" class="w-8 h-8 cursor-pointer"/>
+    </div>
 
-    <form name="updateProfile">
-      <label for="profileBanner">Profile Banner URL:</label>
-      <input type="url" id="profileBanner" name="profileBanner" placeholder="Enter profile banner URL" required/>
-      <br />
+    <div id="profileContainer" class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6 border-t-4"></div>
 
-      <label for="profileImage">Profile Image URL:</label>
-      <input type="url" id="profileImage" name="profileImage" placeholder="Enter profile image URL" required/>
-      <br />
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6 border-t-4">
+      <form name="updateProfile" class="space-y-6">
+        <div>
+          <label for="profileBanner" class="block text-sm font-medium text-gray-800">Profile Banner URL:</label>
+          <input type="url" id="profileBanner" name="profileBanner" placeholder="Enter profile banner URL" required
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"/>
+        </div>
+  
+        <div>
+          <label for="profileImage" class="block text-sm font-medium text-gray-800">Profile Image URL:</label>
+          <input type="url" id="profileImage" name="profileImage" placeholder="Enter profile image URL" required
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"/>
+        </div>
+  
+        <div>
+          <label for="profileBio" class="block text-sm font-medium text-gray-800">Bio:</label>
+          <textarea id="profileBio" name="profileBio" placeholder="Enter your bio" required
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"></textarea>
+        </div>
+  
+        <button type="submit" class="w-full py-2 mt-4 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-md hover:from-orange-500 hover:to-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+          Update Profile
+        </button>
+      </form>
+    </div>
 
-      <label for="profileBio">Bio:</label>
-      <textarea id="profileBio" name="profileBio" placeholder="Enter your bio" required></textarea>
-      <br />
-
-      <button type="submit">Update Profile</button>
-    </form>
-    <div id="userPostsContainer"></div>
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6 border-t-4">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Your Posts</h2>
+      <div id="userPostsContainer" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- User posts will be rendered here -->
+      </div>
+    </div>
   </body>
 </html>
